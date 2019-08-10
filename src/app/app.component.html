@@ -1,3 +1,79 @@
-<favorite></favorite><br>
+<!-- input output style  -->
+<favorite [isfavorite]="post.isfavorite" (change)="onFavoriteChanged($event)"></favorite>
+<br><br>
+
+
+<!-- Assingment -->
 <input type="text" [(ngModel)]="t1"/><br>
 {{ t1  | t1Case}}
+<br><br>
+
+
+<!-- /* ng-content,ng-conteiner */ -->
+<bootstrap-panel >
+    <ng-container class="heading">heading</ng-container>
+    <div class="body">
+        <h1>body</h1>
+        <p>this is ngcontent Ex</p>
+    </div>
+</bootstrap-panel>
+<br><br>
+
+
+<!-- /* Assingment */ -->
+<like
+    [likesCount] = "tweet.likesCount"
+    [isActive]= "tweet.isLiked"> 
+</like><br>
+
+
+<!-- /* ngIf */ -->
+<!-- <div *ngIf="courses.length > 0;  else noCourses"> 
+    <h1>list of courses</h1>
+ </div>
+<ng-template  #noCourses > 
+    <h1>no courses yet </h1>
+<ng-template> -->   
+
+
+ <!-- hidden proprty -->
+    <div [hidden]="course.length == 0" >
+        hidden property
+    </div>
+    <div [hidden]="course.length > 0">
+        Non hidden property
+    </div>
+
+<!-- ngSwicth -->
+    <ul class="nav nav-pills">
+        <li [class.active]="viewMode == 'map'"><a (click)="viewMode = 'map'">Map view</a></li>
+        <li [class.active]="viewMode == 'list'"><a (click)="viewMode = 'list'">List view</a></li>
+    </ul>
+    <div [ngSwitch]="viewMode">
+        <div *ngSwitchCase= "'map'" >Map View Content</div>
+        <div *ngSwitchCase= "'list'" >List View Content</div>
+        <div  *ngSwitchDefault>Other</div>
+    </div><br><br>
+
+<!-- ngFor -->
+    <ul> 
+        <li *ngFor="let Course of Courses; odd as isOdd">
+           {{ Course.name }}<span *ngIf="isOdd"> ODD </span>
+        </li>
+    </ul><br>
+<!-- ngFor for change Deletion -->
+ <button (click)="onAdd()">Add</button>
+<ul> 
+        <li *ngFor="let Course of Courses">
+           {{ Course.name }}
+           <button (click)="onChange(Course)">Remove</button>
+        </li>
+</ul>
+
+<!-- ngFor and TrackBy -->
+<button (click)="loadCourses()">Load Courses</button>
+<ul>
+    <li *ngFor="let Course of Courses">
+        {{Course.name}}
+    </li>
+</ul>

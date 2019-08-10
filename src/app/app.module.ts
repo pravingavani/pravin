@@ -5,12 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { T1CasePipe } from './t1-case.pipe';
+import { PanelComponent } from './panel/panel.component';
+import { LikeComponent } from './like/like.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FavoriteComponent,
-    T1CasePipe
+    T1CasePipe,
+    PanelComponent,
+    LikeComponent
   
   ],
   imports: [

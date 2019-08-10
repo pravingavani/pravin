@@ -1,0 +1,15 @@
+<style>
+.glyphicon {
+    color: blue;
+    cursor: pointer;
+    font-size:  100px;
+}
+.highlighted{
+     color: red;
+}
+</style>
+
+<span class="glyphicon glyphicon-heart"
+[class.highlighted] ="isActive"
+(click)="onClick()"></span>
+<span>{{ likesCount }}</span>
