@@ -26,6 +26,8 @@ export class AppComponent {
 
     viewMode = 'map';
 
+    canSave = true;
+
     Courses;
     loadCourses(){ 
       this.Courses = [
@@ -41,7 +43,17 @@ export class AppComponent {
       Course.name = "UPDATE";
 
     }
-    
+    trackCourse(index, Course){
+      return this.Courses ? this.Courses.id : undefined;
+    }
+  
+    task = {
+      title: 'Review application',
+      assignee:
+      {
+        name:null
+      }
+    }
   
 }
    

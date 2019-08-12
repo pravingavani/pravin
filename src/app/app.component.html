@@ -73,7 +73,39 @@
 <!-- ngFor and TrackBy -->
 <button (click)="loadCourses()">Load Courses</button>
 <ul>
-    <li *ngFor="let Course of Courses">
+    <li *ngFor="let Course of Courses; TrackBy: trackCourse">
         {{Course.name}}
     </li>
 </ul>
+
+<!-- ngStyle -->
+<button
+    
+    [ngStyle]="{
+        'backgroundColor': canSave ? 'blue': 'gray',
+        'color': canSave ? 'white': 'black'}"
+>
+    Save
+</button><br>
+<br>
+
+<!-- safe traversal op -->
+<span>{{ task.assignee.name }}</span>
+
+<!-- custom Directives -->
+<input type="text" [appInputFormat]="'uppercase'">  
+
+<br><br>
+<!-- Assingment  -->
+<zippy title="Shipping Details">
+    Shipping Details Content
+</zippy>
+<zippy title="Billing Details">
+    Billing  Details Content
+</zippy>
+
+<br><br>
+
+<!-- buliding bootstrap form -->
+<contact-form>
+ </contact-form>   

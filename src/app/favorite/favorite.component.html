@@ -1,5 +1,7 @@
 <style></style>
 <span class="glyphicon"
-[class.glyphicon-star] ="isSelectd"
-[class.glyphicon-star-empty] ="!isSelectd"
+[ngClass]="{
+    'glyphicon-thumbs-up': isSelectd,
+    'glyphicon-thumbs-down': !isSelectd
+}"
 (click)="onClick()"></span>

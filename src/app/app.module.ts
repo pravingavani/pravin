@@ -7,6 +7,9 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { T1CasePipe } from './t1-case.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
+import { InputFormatDirective } from './input-format.directive';
+import { ZippyComponent } from './zippy/zippy.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { LikeComponent } from './like/like.component';
     FavoriteComponent,
     T1CasePipe,
     PanelComponent,
-    LikeComponent
+    LikeComponent,
+    InputFormatDirective,
+    ZippyComponent,
+    ContactFormComponent
   
   ],
   imports: [
