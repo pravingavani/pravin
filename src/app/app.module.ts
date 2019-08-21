@@ -1,10 +1,12 @@
+import { HomePageComponent } from './home-page/home-page.component';
+import { GithupFollowersService } from './githup-followers.service';
 import { AppErrorHandler } from './app-error-handler';
 import { PostService } from './post.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { T1CasePipe } from './t1-case.pipe';
@@ -18,6 +20,9 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewCourseComponent } from './new-course/new-course.component';
 import { ChangePassComponent } from './change-pass/change-pass.component';
 import { PostComponentComponent } from './post-component/post-component.component';
+import { GithubFollowersComponent } from './github-followers/github-followers.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 
 
@@ -35,16 +40,29 @@ import { PostComponentComponent } from './post-component/post-component.componen
     SignupFormComponent,
     NewCourseComponent,
     ChangePassComponent,
-    PostComponentComponent  
+    PostComponentComponent,
+    GithubFollowersComponent,
+    HomePageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule ,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path:'' ,component: HomePageComponent },
+      { path: 'contactform', component:ContactFormComponent},
+      { path: 'Posts', component:PostComponentComponent},
+      { path: 'changepassword', component:ChangePassComponent},
+      { path: 'courseform/:id', component:CourseFormComponent}
+
+
+    ])
   ],
   providers: [
     PostService,
+    GithupFollowersService,
     { provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]

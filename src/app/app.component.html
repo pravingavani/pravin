@@ -1,15 +1,21 @@
-<!-- input output style  -->
+
+<!-- Routing and Navigation -->
+
+<navbar></navbar>
+<router-outlet></router-outlet>
+<!-- 
+<!-- input output style  
 <favorite [isfavorite]="post.isfavorite" (change)="onFavoriteChanged($event)"></favorite>
 <br><br>
+-->
 
-
-<!-- Assingment -->
+<!-- Assingment 
 <input type="text" [(ngModel)]="t1"/><br>
 {{ t1  | t1Case}}
 <br><br>
+-->
 
-
-<!-- /* ng-content,ng-conteiner */ -->
+<!-- /* ng-content,ng-conteiner */ 
 <bootstrap-panel >
     <ng-container class="heading">heading</ng-container>
     <div class="body">
@@ -17,15 +23,15 @@
         <p>this is ngcontent Ex</p>
     </div>
 </bootstrap-panel>
-<br><br>
+<br><br>  
+-->
 
-
-<!-- /* Assingment */ -->
+<!-- /* Assingment */ 
 <like
     [likesCount] = "tweet.likesCount"
     [isActive]= "tweet.isLiked"> 
 </like><br>
-
+-->
 
 <!-- /* ngIf */ -->
 <!-- <div *ngIf="courses.length > 0;  else noCourses"> 
@@ -36,15 +42,15 @@
 <ng-template> -->   
 
 
- <!-- hidden proprty -->
+ <!-- hidden proprty 
     <div [hidden]="course.length == 0" >
         hidden property
     </div>
     <div [hidden]="course.length > 0">
         Non hidden property
     </div>
-
-<!-- ngSwicth -->
+-->
+<!-- ngSwicth 
     <ul class="nav nav-pills">
         <li [class.active]="viewMode == 'map'"><a (click)="viewMode = 'map'">Map view</a></li>
         <li [class.active]="viewMode == 'list'"><a (click)="viewMode = 'list'">List view</a></li>
@@ -54,14 +60,16 @@
         <div *ngSwitchCase= "'list'" >List View Content</div>
         <div  *ngSwitchDefault>Other</div>
     </div><br><br>
+    -->
 
-<!-- ngFor -->
+<!-- ngFor 
     <ul> 
         <li *ngFor="let Course of Courses; odd as isOdd">
            {{ Course.name }}<span *ngIf="isOdd"> ODD </span>
         </li>
     </ul><br>
-<!-- ngFor for change Deletion -->
+    -->
+<!-- ngFor for change Deletion 
  <button (click)="onAdd()">Add</button>
 <ul> 
         <li *ngFor="let Course of Courses">
@@ -69,16 +77,16 @@
            <button (click)="onChange(Course)">Remove</button>
         </li>
 </ul>
-
-<!-- ngFor and TrackBy -->
+-->
+<!-- ngFor and TrackBy 
 <button (click)="loadCourses()">Load Courses</button>
 <ul>
     <li *ngFor="let Course of Courses; TrackBy: trackCourse">
         {{Course.name}}
     </li>
 </ul>
-
-<!-- ngStyle -->
+-->
+<!-- ngStyle 
 <button
     
     [ngStyle]="{
@@ -88,40 +96,43 @@
     Save
 </button><br>
 <br>
-
-<!-- safe traversal op -->
+-->
+<!-- safe traversal op 
 <span>{{ task.assignee.name }}</span>
-
-<!-- custom Directives -->
+-->
+<!-- custom Directives 
 <input type="text" [appInputFormat]="'uppercase'">  
-
+-->
 <br><br>
-<!-- Assingment  -->
+<!-- Assingment  
 <zippy title="Shipping Details">
     Shipping Details Content
 </zippy>
 <zippy title="Billing Details">
     Billing  Details Content
 </zippy>
-
+-->
 <br><br>
 
-<!-- buliding bootstrap form -->
+<!-- buliding bootstrap form 
 <contact-form>
  </contact-form>   
  <course-form>
      
  </course-form>
-
- <!-- reactive forms -->
+-->
+ <!-- reactive forms
  <signup-form></signup-form>
-
+ 
  <new-course></new-course>
+-->
+ <!-- Assingment 
+<change-pass></change-pass>
+ -->
+<!-- Assingment  
+<github-followers></github-followers>
+-->
 
- <!-- Assingment  -->
-<change-pass>
-    
-</change-pass>
-
-<!-- gitting data -->
+<!-- gitting data
 <post-component></post-component>
+ --> 
